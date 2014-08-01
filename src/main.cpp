@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     if(!file.is_open())
 		throw std::runtime_error("File not found!");
 
-	std::string delim(argv[2]); // delimiter 
+    std::string delim(argv[2]); // delimiter 
 
     std::cout << "The original file is: " << std::endl;
     displayTextFile(argv[1]);
