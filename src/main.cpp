@@ -11,7 +11,7 @@ void displayContainer(const T& container)
 {
     for(typename T::const_iterator it = container.begin(); 
         it != container.end(); it++)
-        std::cout << *it << " ";    
+        	std::cout << "[" << *it << "]" << " ";    
 }
 
 void displayTextFile(const char* fname)
@@ -26,11 +26,15 @@ int main(int argc, char *argv[])
 {
     if(argc!=3)
     {
-        std::cout << "Need 2 arguments: filename and delimiter" << std::endl;
+        std::cout << "Need 2 arguments: filename and delimiters"\
+		      	  << std::endl;
         return 1;
     }    
     std::ifstream file(argv[1]); // input file stream
-    std::string delim(argv[2]); // delimiter 
+    if(!file.is_open())
+		throw std::runtime_error("File not found!");
+
+	std::string delim(argv[2]); // delimiter 
 
     std::cout << "The original file is: " << std::endl;
     displayTextFile(argv[1]);

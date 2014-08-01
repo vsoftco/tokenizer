@@ -9,7 +9,7 @@ WARNINGS = -Wall -Wextra # Extra warnings
 # Some flags, use pedantic for C++ standard compliance
 CFLAGS = -c -pedantic $(CC_STANDARD) $(WARNINGS) -I $(INC)
 
-CFLAGS_RELEASE = -O2 -DNDEBUG -DEIGEN_NO_DEBUG # Release flags
+CFLAGS_RELEASE = -O2 -DNDEBUG # Release flags
 CFLAGS_DEBUG = -DDEBUG -g3 # Debug flags
 
 LDFLAGS = 
