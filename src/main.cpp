@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     std::cout << "The original file is: " << std::endl;
     displayTextFile(argv[1]);
 
-    std::cout << std::endl << "The tokanized file is: " << std::endl;
+    std::cout << std::endl << "The tokenized file is: " << std::endl;
     std::string tmp;
     while (std::getline(file, tmp)) // tokenize each line
     {
