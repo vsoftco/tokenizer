@@ -1,4 +1,3 @@
-
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
@@ -6,7 +5,6 @@
 #include <string>
 #include <vector>
 #include "token.h"
-
 
 template<typename T>
 void displayContainer(const T &container)
