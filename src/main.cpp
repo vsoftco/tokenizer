@@ -3,7 +3,6 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include <vector>
 #include "token.h"
 
 template<typename T>
