@@ -14,25 +14,26 @@ void displayContainer(const T &container)
         std::cout << "[" << *it << "]" << " ";
 }
 
-void displayTextFile(const char *fname)
+void displayTextFile(const std::string& fname)
 {
-    std::string tmp;
-    std::ifstream file(fname);
-    while (std::getline(file, tmp))
-        std::cout << tmp << std::endl;
+	std::ifstream fin(fname.c_str());
+	if(!fin)
+		throw std::runtime_error("Cannot open input file \"" + fname + "\"");
+	std::cout << fin.rdbuf();
 }
 
 int main(int argc, char *argv[])
 {
     if (argc != 3)
     {
-        std::cout << "Need 2 arguments: filename and delimiters"\
+        std::cout << "Need 2 arguments: \"filename\" and \"delimiters\""\
                   << std::endl;
         return 1;
     }
-    std::ifstream file(argv[1]); // input file stream
-    if (!file.is_open())
-        throw std::runtime_error("File not found!");
+    std::ifstream fin(argv[1]); // input file stream
+    if (!fin)
+        throw std::runtime_error("Cannot open input file \""\
+			   + std::string(argv[1]) + "\"");
 
     std::string delim(argv[2]); // delimiter
 
@@ -41,9 +42,9 @@ int main(int argc, char *argv[])
 
     std::cout << std::endl << "The tokenized file is: " << std::endl;
     std::string tmp;
-    while (std::getline(file, tmp)) // tokenize each line
+    while (std::getline(fin, tmp)) // tokenize each line
     {
-        displayContainer<std::vector<std::string> >(split(tmp, delim));
+        displayContainer(split(tmp, delim));
         std::cout << std::endl;
     }
 
