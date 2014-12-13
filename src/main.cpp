@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     {
         std::cout << "Need 2 arguments: \"filename\" and \"delimiters\""\
                   << std::endl;
-		std::exit(EXIT_FAILURE);
+	    std::exit(EXIT_FAILURE);
     }
     std::ifstream fin(argv[1]); // input file stream
     if (!fin)
