@@ -9,7 +9,7 @@ template<typename T>
 void displayContainer(const T &container)
 {
     for (typename T::const_iterator it = container.begin();
-            it != container.end(); it++)
+            it != container.end(); ++it)
         std::cout << "[" << *it << "]" << " ";
 }
 
