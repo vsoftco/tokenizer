@@ -1,4 +1,5 @@
 *.o
 *~
-tokenizer
+build/
 *.swp
+
