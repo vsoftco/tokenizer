@@ -27,6 +27,6 @@ int main()
 {
     std::string str1 = "This is a test";
     disp(split(str1));        // by default splits on white spaces
-    std::string str2 = "This,is:some:other;test";
-    disp(split(str2, ",:;")); // custom split delimiters
+    std::string str2 = "This, is:some:other;test";
+    disp(split(str2, " ,:;")); // custom split delimiters
 }
