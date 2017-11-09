@@ -1,5 +1,5 @@
-#ifndef TOKEN_H_
-#define TOKEN_H_
+#ifndef SPLIT_H_
+#define SPLIT_H_
 
 #include <vector>
 #include <string>
@@ -9,4 +9,4 @@
 std::vector<std::string> 
 split(const std::string& str, const std::string& delim = " \t\n"); 
 
-#endif // TOKEN_H_
+#endif // SPLIT_H_
